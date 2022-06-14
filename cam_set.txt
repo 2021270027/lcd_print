@@ -1,0 +1,17 @@
+sudo raspi-config
+> Interfacing Options > Camera > Yes (Enabled)
+
+vcgencmd get_camera supported=1 detected=1
+
+raspistill -o image.jpg (사진 촬영)
+raspivid -o video.h264 (영상 촬영)
+
+* 옵션 *
+> -t 1000 (시간 - 1000당 1초)
+> -q (사진 화질)
+> -w (가로)
+> -h (세로)
+> -tl (분할 시간)
+
+* 예시 *
+raspistill -o image_%d.jpg -tl 2000 -t 8000 (총 8초 중에서 2초에 한번씩 연속 촬영)
